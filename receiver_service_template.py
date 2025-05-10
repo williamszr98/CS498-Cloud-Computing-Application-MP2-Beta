@@ -60,10 +60,7 @@ def route_post():
             NetworkAclIds=[NACL_ID]
         )
         
-        return jsonify({
-            "seed_update": update_response.text,
-            "nacl": nacl_response
-        }), 200
+        return jsonify({nacl_response}), 200
         
     except Exception as e:
         print(f"POST Error: {str(e)}")
